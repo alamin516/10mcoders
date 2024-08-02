@@ -41,7 +41,8 @@ const ChangePassword = (props: Props) => {
     }
 
     if(error){
-        toast.error(`${error?.data?.message}`)
+      const errorMessage = error as any;
+        toast.error(`${errorMessage?.data?.message}`)
     }
   };
 
