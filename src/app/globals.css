@@ -1,0 +1,245 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
+.hero_animation {
+  background-image: linear-gradient(
+    147.92deg,
+    hsla(239, 76%, 53%, 0.456) 10.41%,
+    hsla(0, 0%, 100%, 0),
+    89.25%
+  );
+  animation: changeBackgroundColor 8s infinite alternate;
+}
+
+@keyframes changeBackgroundColor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  16.6% {
+    opacity: 0.9;
+  }
+  33.33% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  66.67% {
+    opacity: 0.5;
+  }
+  83.33% {
+    opacity: 0.4;
+  }
+}
+
+a {
+  cursor: pointer;
+}
+
+/* Input Number */
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: none; 
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* skeleton start  */
+.skeleton {
+  background-image: linear-gradient(
+    147.92deg,
+    hsla(240, 2%, 70%, 0.456) 10.41%,
+    hsla(0, 0%, 100%, 0.603),
+    89.25%
+  );
+  animation: skeletonAnimation 1s infinite alternate;
+}
+
+@keyframes skeletonAnimation {
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 0.6;
+  }
+  80% {
+    opacity: 0.7;
+  }
+}
+/* skeleton end  */
+
+/* Animation for wrong token  */
+.shake {
+  animation: shake 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+  60% {
+    transform: translateX(-2px);
+  }
+  80% {
+    transform: translateX(2px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+/* Animation for wrong token  */
+
+/* Preloader Start */
+.preloader {
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background-color: #111827;
+  background-position: center center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: 1s opacity;
+}
+
+.preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.preloader .spinner_wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 33333;
+}
+
+.preloader .spinner {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #fff;
+  -webkit-animation: sk-rotateplane 1.2s infinite ease-in-out;
+  animation: sk-rotateplane 1.2s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-rotateplane {
+  0% {
+    -webkit-transform: perspective(120px);
+  }
+  50% {
+    -webkit-transform: perspective(120px) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: perspective(120px) rotateY(180deg) rotateX(180deg);
+  }
+}
+@keyframes sk-rotateplane {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+    -webkit-transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+    -webkit-transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
+.glass-morphism {
+  /* background-color: rgba(255,255,255,0.1); */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+}
+
+/* Preloader End */
+
+/* Admin sidebar start */
+.notification::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.notification::-webkit-scrollbar-track {
+  background: rgb(240, 240, 240);
+}
+
+.dark .notification::-webkit-scrollbar-track {
+  background: rgb(15 23 42);
+}
+/* Handle */
+.notification::-webkit-scrollbar-thumb {
+  background: rgb(54, 221, 54);
+  opacity: 0.5;
+}
+
+/* Handle on hover */
+.notification::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
+
+
+.admin-sidebar .side_nav::-webkit-scrollbar {
+  width: 5px;
+}
+
+.admin-sidebar .side_nav::-webkit-scrollbar-track {
+  background: rgb(15 23 42);
+}
+
+
+.admin-sidebar .side_nav::-webkit-scrollbar-thumb {
+  background: rgb(54, 221, 54);
+  opacity: 0.5;
+}
+
+.admin-sidebar .side_nav::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
+/* Admin sidebar End */
+
+
+/* admin content scroller */
+.admin-main::-webkit-scrollbar {
+  width: 5px;
+}
+
+.admin-main::-webkit-scrollbar-track {
+  background: rgb(15 23 42);
+}
+
+
+.admin-main::-webkit-scrollbar-thumb {
+  background: rgb(54, 221, 54);
+  opacity: 0.5;
+}
+
+.admin-main::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
+/* admin content scroller */
