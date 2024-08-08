@@ -50,11 +50,11 @@ const EditCourse:React.FC<Props> = ({id}) => {
   ]);
 
   const [courseData, setCourseData] = useState({});
-  const { data, isLoading, refetch } = useGetAllCoursesQuery(
+  const { data, refetch } = useGetAllCoursesQuery(
     {},
     { refetchOnMountOrArgChange: true }
   );
-  const [editCourse, {isSuccess, error}] = useEditCourseMutation()
+  const [editCourse, {isSuccess, isLoading, error}] = useEditCourseMutation()
 
   useEffect(() => {
     if(isSuccess){
@@ -174,6 +174,7 @@ const EditCourse:React.FC<Props> = ({id}) => {
             courseData={courseData}
             handleSubmitCourse={handleSubmitCourse}
             isEdit={true}
+            isLoading={isLoading}
           />
         )}
       </div>

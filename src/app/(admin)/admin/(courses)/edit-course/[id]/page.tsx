@@ -6,8 +6,6 @@ type Props = {};
 const page = ({params}: any) => {
   const id = params?.id;
 
-  console.log(id)
-
   return (
     <>
       <Heading title="Edit Course - admin" description="" keywords="" />
