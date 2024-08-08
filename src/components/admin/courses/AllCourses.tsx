@@ -44,17 +44,14 @@ const AllCourses = (props: Props) => {
   };
 
   const columns = [
-<<<<<<< HEAD
     { field: "id", headerName: "ID", flex: 0.4 },
     {
       field: "title",
       headerName: "Course Title",
       flex: 1,
     },
-=======
     { field: "id", headerName: "ID", flex: 0.2 },
     { field: "title", headerName: "Course Title", flex: 1 },
->>>>>>> f51af52e500fa30cc7081129b7ad274e77672ed6
     { field: "price", headerName: "Course Price", flex: 0.3 },
     { field: "ratings", headerName: "Ratings", flex: 0.3 },
     { field: "purchased", headerName: "Purchased", flex: 0.4 },
