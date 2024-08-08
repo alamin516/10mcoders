@@ -8,7 +8,8 @@ type Props = {
   setActive: (active: number) => void;
   courseData: any;
   handleSubmitCourse: any;
-  isEdit?: boolean
+  isEdit?: any;
+  isLoading?: any;
 };
 
 const CoursePreview: React.FC<Props> = ({
@@ -16,7 +17,8 @@ const CoursePreview: React.FC<Props> = ({
   setActive,
   courseData,
   handleSubmitCourse,
-  isEdit
+  isEdit,
+  isLoading,
 }) => {
   const prevButton = () => {
     setActive(active - 1);
@@ -28,9 +30,11 @@ const CoursePreview: React.FC<Props> = ({
     100
   ).toFixed(0);
 
+  const isEqualPriceOrNot = courseData?.estimatedPrice !== courseData?.price;
+
   const handleSubmit = () => {
-    handleSubmitCourse()
-  }
+    handleSubmitCourse();
+  };
 
   return (
     <div className="w-[80%] m-auto mt-5 dark:text-white">
@@ -44,14 +48,20 @@ const CoursePreview: React.FC<Props> = ({
 
         <div className="flex items-center dark:text-white">
           <h1 className="pt-5 text-[25px] dark:text-white">
-            {courseData.price === 0 ? "Free" : `$${courseData.price}`}
+            {courseData.price == 0 ? "Free" : `$${courseData.price}`}
           </h1>
-          <h5 className="pl-3 text-xl mt-2 line-through opacity-80">
-            ${courseData?.estimatedPrice}
-          </h5>
-          <h4 className="pl-5 pt-4 text-[24px]">
-            {discountPercentagePrice}% off
-          </h4>
+          {isEqualPriceOrNot ? (
+            <>
+              <h5 className="pl-3 text-xl mt-2 line-through opacity-80">
+                ${courseData?.estimatedPrice}
+              </h5>
+              <h4 className="pl-5 pt-4 text-[24px]">
+                {discountPercentagePrice}% off
+              </h4>
+            </>
+          ) : 
+           <></>
+          }
         </div>
 
         <div className="flex items-center">
@@ -100,14 +110,14 @@ const CoursePreview: React.FC<Props> = ({
           </h1>
         </div>
 
-        {courseData?.benefits?.map((item: any, index: number) =>(
+        {courseData?.benefits?.map((item: any, index: number) => (
           <div className="w-full flex 800px:items-center py-2" key={index}>
             <div className="w-4 mr-1">
               <CheckBoxOutlined />
             </div>
             <p className="pl-2">{item.title}</p>
           </div>
-       ))}
+        ))}
 
         <div className="w-full mt-4">
           <h1 className="text-[25px] font-Poppins font-medium">
@@ -141,12 +151,16 @@ const CoursePreview: React.FC<Props> = ({
           Previous
         </div>
         <div
-          className="w-full 800px:w-[180px] bg-green-500 rounded-md text-center py-2 text-white cursor-pointer"
+          className={`w-full 800px:w-[180px] ${
+            isLoading ? "bg-slate-700" : "bg-green-500"
+          } rounded-md text-center py-2 text-white cursor-pointer`}
           onClick={() => handleSubmit()}
         >
-          {
-            isEdit ? "Update course" : "Create course"
-          }
+          {isEdit
+            ? isLoading
+              ? "Updating course"
+              : "Update course"
+            : "Create course"}
         </div>
       </div>
     </div>

@@ -44,16 +44,21 @@ const AllCourses = (props: Props) => {
   };
 
   const columns = [
+<<<<<<< HEAD
     { field: "id", headerName: "ID", flex: 0.4 },
     {
       field: "title",
       headerName: "Course Title",
       flex: 1,
     },
+=======
+    { field: "id", headerName: "ID", flex: 0.2 },
+    { field: "title", headerName: "Course Title", flex: 1 },
+>>>>>>> f51af52e500fa30cc7081129b7ad274e77672ed6
     { field: "price", headerName: "Course Price", flex: 0.3 },
     { field: "ratings", headerName: "Ratings", flex: 0.3 },
     { field: "purchased", headerName: "Purchased", flex: 0.4 },
-    { field: "created_at", headerName: "Create At", flex: 0.5 },
+    { field: "created_at", headerName: "Created At", flex: 0.5 },
     {
       field: "  ",
       headerName: "Edit",
@@ -94,7 +99,7 @@ const AllCourses = (props: Props) => {
         rows.push({
           id: item._id,
           title: item.name,
-          price: `$${item.price}`,
+          price: `${item?.price == 0 ? "Free" : `$${item?.price}`}`,
           ratings: item.ratings,
           purchased: item.sold,
           created_at: format(item.createdAt),

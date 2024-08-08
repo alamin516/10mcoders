@@ -62,7 +62,7 @@ const Sidebar = ({ display, minimize }: Props) => {
       className={`admin-sidebar transform ${
         display ? "translate-x-0" : "-translate-x-full"
       } transition-all duration-[300ms] dark:bg-slate-800 bg-gray-900 text-black ${
-        minimize ? "w-[90px]" : "w-64"
+        minimize ? "w-[0px]" : "w-64"
       } lg:translate-x-0 lg:static absolute top-[60px] left-0 min-h-screen-minus-60px z-50`}
     >
       <nav className=" flex min-h-[calc(100vh-100px)] flex-col justify-between overflow-hidden">
