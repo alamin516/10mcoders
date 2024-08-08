@@ -83,7 +83,7 @@ const Profile: React.FC<Props> = (props: Props) => {
         <div className="w-full flex justify-center">
           <div className="relative">
             <Image
-              src={user?.avatar?.url || "/assets/images/user/profile.png"}
+              src={user?.avatar?.url || "/assets/images/user/avatar.png"}
               alt=""
               className="cursor-pointer border-[3px] border-green-500 rounded-full w-[120px] h-[120px] object-cover shadow-lg dark:shadow-white/10"
               width={120}

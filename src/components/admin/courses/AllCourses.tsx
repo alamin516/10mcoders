@@ -45,7 +45,11 @@ const AllCourses = (props: Props) => {
 
   const columns = [
     { field: "id", headerName: "ID", flex: 0.4 },
-    { field: "title", headerName: "Course Title", flex: 1 },
+    {
+      field: "title",
+      headerName: "Course Title",
+      flex: 1,
+    },
     { field: "price", headerName: "Course Price", flex: 0.3 },
     { field: "ratings", headerName: "Ratings", flex: 0.3 },
     { field: "purchased", headerName: "Purchased", flex: 0.4 },
@@ -101,7 +105,7 @@ const AllCourses = (props: Props) => {
   return (
     <div className="mt-10">
       <Box m="20px">
-      <div className="w-full flex justify-between items-center">
+        <div className="w-full flex justify-between items-center">
           <h1 className={`text-xl font-medium dark:text-white`}>All courses</h1>
         </div>
 

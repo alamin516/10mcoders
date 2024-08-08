@@ -28,7 +28,7 @@ const SidebarProfile = ({ user, logOutHandler }: Props) => {
         } flex items-center gap-4 px-4 py-1`}
       >
         {<Image
-          src={user?.avatar?.url || "/assets/images/user/profile.png"}
+          src={user?.avatar?.url || "/assets/images/user/avatar.png"}
           width={35}
           height={35}
           alt="User Avatar"
