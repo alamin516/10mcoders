@@ -38,7 +38,7 @@ const SidebarProfile = ({ user, logOutHandler }: Props) => {
           My Account
         </span>
       </Link>
-      <Link
+      {<Link
         href={"/profile/change-password"}
         className={`${
           currentPath === "/profile/change-password"
@@ -50,7 +50,7 @@ const SidebarProfile = ({ user, logOutHandler }: Props) => {
         <span className="text-base 800px:block hidden font-Poppins">
           Change Password
         </span>
-      </Link>
+      </Link>}
       <Link
         href={"/profile/enrolled-courses"}
         className={`${

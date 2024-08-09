@@ -39,7 +39,7 @@ const AdminLayout = ({ children }: Props) => {
         />
         <div className="flex flex-1 overflow-hidden">
           <AdminSidebar display={display} minimize={minimize} />
-          <main className="admin-main flex-1 sm:rounded-tl-lg lg:rounded-tl-lg dash-bg dark:bg-slate-900 bg-slate-50 p-5 overflow-y-auto">
+          <main className={`admin-main flex-1 ${minimize ? "" : "sm:rounded-tl-lg lg:rounded-tl-lg"} dash-bg dark:bg-slate-900 bg-slate-50 p-5 overflow-y-auto`}>
             {children}
           </main>
         </div>

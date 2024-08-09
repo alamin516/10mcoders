@@ -72,9 +72,7 @@ const Sidebar = ({ display, minimize }: Props) => {
               <Image
                 src={user?.avatar?.url || "/assets/images/user/avatar.png"}
                 alt=""
-                className={`cursor-pointer border-[3px] border-green-500 rounded-full ${
-                  minimize ? "w-[50px] h-[50px]" : "w-[120px] h-[120px]"
-                }  object-cover shadow-lg dark:shadow-white/10 transition-all duration-300`}
+                className={`w-[120px] h-[120px] cursor-pointer border-[3px] border-green-500 rounded-full object-cover shadow-lg dark:shadow-white/10 transition-all duration-300`}
                 width={120}
                 height={120}
                 priority
@@ -87,7 +85,7 @@ const Sidebar = ({ display, minimize }: Props) => {
               <div key={index} className="relative">
                 <Link href={item.href} target={item.target || "_self"}>
                   <li
-                    className={`flex items-center justify-center group w-full cursor-pointer relative overflow-hidden py-2 px-4 hover:bg-white dark:hover:bg-slate-900 hover:text-black dark:hover:text-white dark:text-slate-200 ${
+                    className={`flex items-center justify-left group w-full cursor-pointer relative overflow-hidden py-2 px-4 hover:bg-white dark:hover:bg-slate-900 hover:text-black dark:hover:text-white dark:text-slate-200 ${
                       currentPath === item.href
                         ? "before:absolute before:w-1 before:bg-green-400 before:h-full before:left-0 before:top-0 dark:bg-slate-900 dark:hover:bg-slate-700 bg-white text-green-400 dark:!text-white"
                         : "text-white"
@@ -100,9 +98,7 @@ const Sidebar = ({ display, minimize }: Props) => {
                   >
                     {item.icon}
                     <div
-                      className={`${
-                        minimize ? "opacity-0 w-0" : "opacity-100 w-full"
-                      } flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
+                      className={`flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
                     >
                       <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
                         {item.label}
@@ -128,14 +124,10 @@ const Sidebar = ({ display, minimize }: Props) => {
                             currentPath === subItem.href
                               ? "before:absolute before:w-1 before:bg-green-400 before:h-full before:left-0 before:top-0 dark:bg-slate-800 dark:hover:bg-slate-700 bg-gray-100 text-green-400 dark:!text-white"
                               : "text-white"
-                          } ${minimize ? "!leading-[24px] pl-1" : ""}`}
+                          }`}
                         >
                           <div
-                            className={`${
-                              minimize
-                                ? "w-full text-[12px]"
-                                : "opacity-100 w-full"
-                            } flex items-left transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
+                            className={`flex items-left transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
                           >
                             <p className="capitalize whitespace-nowrap ml-[5px] opacity-100 transition-opacity duration-150 ease-linear">
                               {subItem.label}
@@ -157,9 +149,7 @@ const Sidebar = ({ display, minimize }: Props) => {
           >
             <LogoutOutlined />
             <div
-              className={`${
-                minimize ? "opacity-0 w-full" : "opacity-100 w-full"
-              } flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
+              className={`flex items-center transition-all duration-[400ms] ease-linear flex-nowrap justify-between`}
             >
               <p className="capitalize whitespace-nowrap ml-[13px] opacity-100 transition-opacity duration-150 ease-linear">
                 Logout

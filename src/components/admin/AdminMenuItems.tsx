@@ -1,5 +1,6 @@
 import {
   AdminPanelSettings,
+  ColorLens,
   GridViewOutlined,
   Group,
   LibraryBooksSharp,
@@ -57,6 +58,16 @@ export const menuItems = [
       { href: "/admin/post/create", label: "Create Post",},
       { href: "/admin/post/categories", label: "Categories",},
       { href: "/admin/post/tags", label: "Tags"},
+    ],
+  },
+  {
+    href: "#",
+    icon: <ColorLens />,
+    label: "Customization",
+    subItems: [
+      { href: "/admin/customization/hero", label: "Hero Section",},
+      { href: "/admin/customization/faqs", label: "Faqs",},
+      { href: "/admin/customization/category", label: "Category"},
     ],
   },
   {

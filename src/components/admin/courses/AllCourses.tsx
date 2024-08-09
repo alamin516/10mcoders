@@ -50,8 +50,6 @@ const AllCourses = (props: Props) => {
       headerName: "Course Title",
       flex: 1,
     },
-    { field: "id", headerName: "ID", flex: 0.2 },
-    { field: "title", headerName: "Course Title", flex: 1 },
     { field: "price", headerName: "Course Price", flex: 0.3 },
     { field: "ratings", headerName: "Ratings", flex: 0.3 },
     { field: "purchased", headerName: "Purchased", flex: 0.4 },
