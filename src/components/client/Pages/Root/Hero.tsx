@@ -1,5 +1,5 @@
 "use client";
-import LightGradient from "@/utils/LightGradient";
+import { useGetHeroDataQuery } from "@/lib/features/layout/layoutApi";
 import { Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +8,10 @@ import React from "react";
 type Props = {};
 
 const Hero: React.FC<Props> = () => {
+  const { data } = useGetHeroDataQuery("Banner");
+
+  const banner = data?.layout?.banner;
+
   return (
     <div className="w-full 1000px:flex 1500px:min-h-screen items-center justify-center min-h-[calc(100vh-80px)]">
       <div className="absolute top-[80px] 1000px:top-[unset] 1000px:w-[700px] 1100px:w-[600px] min-h-[calc(100vh-80px)] w-full hero_animation -z-50"></div>
@@ -22,16 +26,38 @@ const Hero: React.FC<Props> = () => {
         />
       </div> */}
       <div className="1000px:w-[80%] 1500px:w-[100%] flex flex-col items-center 1000px:mt-0 text-center 1000px:text-center 800px:mt-[150px] mt-[75px] z-10">
-        <h2 className="dark:text-white text-[#000000c7] text-[30px] px-3 w-full 1000px:text-[70px] font-[600] font-Josefin py-2 1000px:leading-[75px] 1500px:!w-[55%] 800px:pt-[100px]">
-          Improve Your online Learning Experience Better Instantly
-        </h2>
-        <br />
-        <p className="dark:text-white text-[#000000c7] text-[18px] font-[600] font-Josefin  1500px:!w-[30%] 1100px:!w-[40%] w-[78%] px-3">
-          We have 10k Online course & 50k+ Online registered students. Find your
-          desired Courses from them
-        </p>
-        <br />
-        <br />
+        {banner?.title ? (
+          <>
+            <h2 className="dark:text-white text-[#000000c7] text-[30px] px-3 w-full 1000px:text-[70px] font-[600] font-Josefin py-2 1000px:leading-[75px] 1500px:!w-[55%] 800px:pt-[100px]">
+              {banner?.title}
+            </h2>
+            <br />
+          </>
+        ) : (
+          <>
+            <h2 className="dark:text-white text-[#000000c7] text-[30px] px-3 w-full 1000px:text-[70px] font-[600] font-Josefin py-2 1000px:leading-[75px] 1500px:!w-[55%] 800px:pt-[100px]">
+              Improve Your Online Learning Experience Better Instantly
+            </h2>
+          </>
+        )}
+
+        {banner?.subTitle ? (
+          <>
+            <p className="dark:text-white text-[#000000c7] text-[18px] font-[600] font-Josefin  1500px:!w-[30%] 1100px:!w-[40%] w-[78%] px-3">
+              {banner?.subTitle}
+            </p>
+            <br />
+            <br />
+          </>
+        ) : (
+          <>
+            <p className="dark:text-white text-[#000000c7] text-[18px] font-[600] font-Josefin  1500px:!w-[30%] 1100px:!w-[40%] w-[78%] px-3">
+              We have 10k Online courses & 50k+ Online registered students. Find
+              your desired Courses from them.
+            </p>
+          </>
+        )}
+
         <div className="1500px:w-[40%] 1100px:w-[40%] w-[90%] h-[50px] bg-transparent relative px-3 -z-10">
           <input
             type="search"
@@ -67,9 +93,9 @@ const Hero: React.FC<Props> = () => {
             className="rounded-full h-[50px] w-[50px] ml-[-20px] border-[2px] dark:border-white border-green-500"
           />
           <p className="font-Josefin dark:text-green-200 text-[#000000b2] 1000px:pl-3 text-[18px] font-[600]">
-            50k+ People already trusted us.{" "}
-            <Link href={"/courses"} className="text-green-600 cursor-pointer">
-              View Courses
+            {banner?.subTitle2}{" "}
+            <Link href={`/${banner?.url}`} className="text-green-600 cursor-pointer">
+              {" "}{banner?.url_text}
             </Link>
           </p>
         </div>
