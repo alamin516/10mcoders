@@ -36,6 +36,9 @@ const EditHero: React.FC<Props> = () => {
       setLinkText(data?.layout?.banner?.url_text || "");
       setImage(data?.layout?.banner?.image || "");
     }
+  }, [data]);
+
+  useEffect(() => {
     if (isSuccess) {
       refetch();
       toast.success("Layout updated successfully");
@@ -44,7 +47,7 @@ const EditHero: React.FC<Props> = () => {
       const errorMessage = (error as any)?.data?.message || "An error occurred";
       toast.error(errorMessage);
     }
-  }, [data, refetch, isSuccess, error]);
+  }, [refetch, isSuccess, error]);
 
   const handleEdit = async () => {
     await editLayoutData({
@@ -77,14 +80,14 @@ const EditHero: React.FC<Props> = () => {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
           rows={3}
-          className="dark:text-white text-[#000000c7] text-[30px] px-3 w-full 1000px:text-[70px] font-[600] font-Josefin py-2 1000px:leading-[75px] 1500px:!w-[55%] 800px:pt-[100px] bg-transparent border-none outline-none text-center min-h"
+          className="dark:text-white text-[#000000c7] text-[30px] px-3 w-full 1000px:text-[70px] font-[600] font-Josefin py-2 1000px:leading-[75px] 1500px:!w-[55%] 800px:pt-[100px] bg-transparent border-none outline-none text-center resize-none"
         />
         <br />
         <textarea
           value={subTitle}
           rows={3}
           onChange={(e) => setSubTitle(e.target.value)}
-          className="dark:text-white text-[#000000c7] text-[18px] font-[600] font-Josefin 1500px:!w-[30%] 1100px:!w-[50%] w-[80%] px-3 bg-transparent border-none outline-none text-center"
+          className="dark:text-white text-[#000000c7] text-[18px] font-[600] font-Josefin 1500px:!w-[30%] 1100px:!w-[50%] w-[80%] px-3 bg-transparent border-none outline-none text-center resize-none"
         />
         <br />
         <br />
