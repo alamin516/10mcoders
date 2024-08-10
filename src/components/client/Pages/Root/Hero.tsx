@@ -96,7 +96,7 @@ const Hero: React.FC<Props> = () => {
             {banner?.subTitle2 ?  banner?.subTitle2 : "60k+ People already trusted us."}{" "}
             {banner?.url || banner?.url_text ? <Link href={`/${banner?.url}`} className="text-green-600 cursor-pointer">
               {" "}{banner?.url_text}
-            </Link> : <Link href={`/courses}`} className="text-green-600 cursor-pointer">
+            </Link> : <Link href={`/courses`} className="text-green-600 cursor-pointer">
               {" "}{"Courses"}
             </Link>}
           </p>
