@@ -38,6 +38,7 @@ const Hero: React.FC<Props> = () => {
             <h2 className="dark:text-white text-[#000000c7] text-[30px] px-3 w-full 1000px:text-[70px] font-[600] font-Josefin py-2 1000px:leading-[75px] 1500px:!w-[55%] 800px:pt-[100px]">
               Improve Your Online Learning Experience Better Instantly
             </h2>
+            <br />
           </>
         )}
 
@@ -55,6 +56,8 @@ const Hero: React.FC<Props> = () => {
               We have 10k Online courses & 50k+ Online registered students. Find
               your desired Courses from them.
             </p>
+            <br />
+            <br />
           </>
         )}
 
