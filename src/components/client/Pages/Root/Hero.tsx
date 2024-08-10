@@ -93,10 +93,12 @@ const Hero: React.FC<Props> = () => {
             className="rounded-full h-[50px] w-[50px] ml-[-20px] border-[2px] dark:border-white border-green-500"
           />
           <p className="font-Josefin dark:text-green-200 text-[#000000b2] 1000px:pl-3 text-[18px] font-[600]">
-            {banner?.subTitle2}{" "}
-            <Link href={`/${banner?.url}`} className="text-green-600 cursor-pointer">
+            {banner?.subTitle2 ?  banner?.subTitle2 : "60k+ People already trusted us."}{" "}
+            {banner?.url || banner?.url_text ? <Link href={`/${banner?.url}`} className="text-green-600 cursor-pointer">
               {" "}{banner?.url_text}
-            </Link>
+            </Link> : <Link href={`/courses}`} className="text-green-600 cursor-pointer">
+              {" "}{"Courses"}
+            </Link>}
           </p>
         </div>
       </div>
