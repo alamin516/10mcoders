@@ -31,7 +31,7 @@ export default function RootLayout({
         className={`${poppins.variable} ${josefin.variable} !bg-white bg-no-repeat dark:bg-gradient-to-t dark:from-gray-900 dark:to-black`}
         suppressHydrationWarning={true}
       >
-        <Preloader/>
+        {/* <Preloader/> */}
         <Providers>
           <SessionProvider>
             <ThemeProvider attribute="class">

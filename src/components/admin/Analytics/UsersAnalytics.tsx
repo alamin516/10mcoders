@@ -1,14 +1,14 @@
 "use client";
 import React from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid } from 'recharts';
-import { useGetCoursesAnalyticsQuery } from "../../../lib/features/analytics/analyticsApi";
+import { useGetUsersAnalyticsQuery } from "../../../lib/features/analytics/analyticsApi";
 
 type Props = {};
 
-const CoursesAnalytics: React.FC<Props> = () => {
-  const { data, isLoading } = useGetCoursesAnalyticsQuery({});
+const UsersAnalytics: React.FC<Props> = () => {
+  const { data, isLoading } = useGetUsersAnalyticsQuery({});
 
-  const analyticsData = data?.payload.course.last12Months.map((item: any) => ({
+  const analyticsData = data?.payload.user.last12Months.map((item: any) => ({
     name: item.month,
     count: item.count,
   })) || [];
@@ -25,10 +25,10 @@ const CoursesAnalytics: React.FC<Props> = () => {
 
   return (
     <div className="w-full 1100px:w-[80%] mx-auto h-[300px] p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-      <h2 className="text-lg font-semibold dark:text-white mb-4">Courses Analytics (Last 12 Months)</h2>
+      <h2 className="text-lg font-semibold dark:text-white mb-4">Order Analytics (Last 12 Months)</h2>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={analyticsData} margin={{ top: 20, right: 20, left: 0, bottom: 20 }}>
-          <CartesianGrid strokeDasharray="3 3"/>
+          <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="name" tick={{ fill: '#00ff00' }} />
           <YAxis tick={{ fill: '#00ff00' }} />
           <Tooltip />
@@ -39,4 +39,4 @@ const CoursesAnalytics: React.FC<Props> = () => {
   );
 };
 
-export default CoursesAnalytics;
+export default UsersAnalytics;
