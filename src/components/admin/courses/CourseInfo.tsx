@@ -1,6 +1,7 @@
+import { useGetHeroDataQuery } from "@/lib/features/layout/layoutApi";
 import { styles } from "@/styles/style";
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 type Props = {
   courseInfo: any;
@@ -16,6 +17,14 @@ const CourseInfo: React.FC<Props> = ({
   setActive,
 }) => {
   const [dragging, setDragging] = useState(false);
+  const { data } = useGetHeroDataQuery("Categories");
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    if (data) {
+      setCategories(data.layout.categories ?? []);
+    }
+  }, [data]);
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
@@ -127,20 +136,41 @@ const CourseInfo: React.FC<Props> = ({
           </div>
         </div>
 
-        <div className="mt-4">
-          <label htmlFor="tags">Course Tags</label>
-          <input
-            type="text"
-            name="tags"
-            required
-            value={courseInfo.tags}
-            onChange={(e: any) =>
-              setCourseInfo({ ...courseInfo, tags: e.target.value })
-            }
-            id="tags"
-            placeholder="React, MERN, Node, CSS, HTML"
-            className={`${styles.input}`}
-          />
+        <div className="mt-4 flex gap-3">
+          <div className="w-[50%]">
+            <label htmlFor="tags">Course Tags</label>
+            <input
+              type="text"
+              name="tags"
+              required
+              value={courseInfo.tags}
+              onChange={(e: any) =>
+                setCourseInfo({ ...courseInfo, tags: e.target.value })
+              }
+              id="tags"
+              placeholder="React, MERN, Node, CSS, HTML"
+              className={`${styles.input}`}
+            />
+          </div>
+
+          <div className="w-[50%]">
+            <label className="">Course Categories</label>
+            <select
+              name=""
+              value={courseInfo.category}
+              onChange={(e: any) =>
+                setCourseInfo({ ...courseInfo, category: e.target.value })
+              }
+              className={`${styles.input} dark:bg-slate-800`}
+            >
+              <option value="">Select a category</option>
+              {categories.map((category: any) => (
+                <option key={category._id} value={category.title}>
+                  {category.title}
+                </option>
+              ))}
+            </select>
+          </div>
         </div>
 
         <div className="mt-4 flex gap-3">

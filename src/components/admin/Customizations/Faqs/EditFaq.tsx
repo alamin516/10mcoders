@@ -63,7 +63,7 @@ const EditFaq: React.FC = () => {
   };
 
   const handleCopyFaq = (index: number) => {
-    const copiedFaq = { ...faqs[index], _id: Math.random().toString(36).substr(2, 9) };
+    const copiedFaq = { ...faqs[index]};
     setFaqs([...faqs, copiedFaq]);
     setExpandedIndex(faqs.length);
   };

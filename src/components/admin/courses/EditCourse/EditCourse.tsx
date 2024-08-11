@@ -25,6 +25,7 @@ const EditCourse:React.FC<Props> = ({id}) => {
     name: "",
     description: "",
     price: 0,
+    category: "",
     estimatedPrice: 0,
     tags: "",
     level: "",
@@ -39,6 +40,7 @@ const EditCourse:React.FC<Props> = ({id}) => {
       description: "",
       videoUrl: "",
       videoSection: "Untitled Section",
+      videoLength: 0,
       links: [
         {
           title: "",
@@ -76,6 +78,7 @@ const EditCourse:React.FC<Props> = ({id}) => {
         setCourseInfo({
             name: editCourseData.name,
             description: editCourseData.description,
+            category: editCourseData.categories,
             price: editCourseData.price,
             estimatedPrice: editCourseData?.estimatedPrice,
             tags: editCourseData.tags,
@@ -105,6 +108,7 @@ const EditCourse:React.FC<Props> = ({id}) => {
       videoUrl: courseContent.videoUrl,
       description: courseContent.description,
       videoSection: courseContent.videoSection,
+      videoLength: courseContent.videoLength,
       links: courseContent.links.map((link) => ({
         title: link.title,
         url: link.url,
@@ -116,6 +120,7 @@ const EditCourse:React.FC<Props> = ({id}) => {
     const data = {
       name: courseInfo.name,
       description: courseInfo.description,
+      categories: courseInfo.category,
       price: courseInfo.price,
       estimatedPrice: courseInfo.estimatedPrice,
       tags: courseInfo.tags,

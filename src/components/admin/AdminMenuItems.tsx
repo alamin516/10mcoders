@@ -3,6 +3,7 @@ import {
   ColorLens,
   GridViewOutlined,
   Group,
+  InsertChart,
   LibraryBooksSharp,
   MessageOutlined,
   OpenInNewOutlined,
@@ -67,7 +68,17 @@ export const menuItems = [
     subItems: [
       { href: "/admin/customization/hero", label: "Hero Section",},
       { href: "/admin/customization/faqs", label: "Faqs",},
-      { href: "/admin/customization/category", label: "Category"},
+      { href: "/admin/customization/categories", label: "Categories"},
+    ],
+  },
+  {
+    href: "#",
+    icon: <InsertChart />,
+    label: "Analytics",
+    subItems: [
+      { href: "/admin/analytics/courses", label: "Course"},
+      { href: "/admin/analytics/orders", label: "Order",},
+      { href: "/admin/analytics/users", label: "User",},
     ],
   },
   {

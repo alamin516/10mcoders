@@ -36,6 +36,8 @@ const CoursePreview: React.FC<Props> = ({
     handleSubmitCourse();
   };
 
+  console.log(courseData)
+
   return (
     <div className="w-[80%] m-auto mt-5 dark:text-white">
       <div className="w-full relative">
