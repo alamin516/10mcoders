@@ -1,32 +1,34 @@
-import { StarHalfOutlined, StarOutlined } from '@mui/icons-material';
-import React from 'react'
+import { StarHalfOutlined, StarOutlined, StarBorder } from '@mui/icons-material';
+import React from 'react';
 
 type Props = {
-  rating: number
-}
+  rating: number;
+};
 
-const Ratings: React.FC<Props> = ({rating}) => {
+const Ratings: React.FC<Props> = ({ rating }) => {
   const stars = [];
 
-  for(let i = 1; i <= 5; i++){
-    if(i <= rating){
+  for (let i = 1; i <= 5; i++) {
+    if (i <= Math.floor(rating)) {
       stars.push(
-        <StarOutlined key={i} className='text-xl !text-yellow-600 mr-2 cursor-pointer'/>
-      )
-    }else if(i === Math.ceil(rating) && !Number.isInteger(rating)){
+        <StarOutlined key={i}  style={{ fontSize: '16px' }}  className="text-lg w-4 text-yellow-600 mr-2 cursor-pointer" />
+      );
+    } else if (i === Math.ceil(rating) && !Number.isInteger(rating)) {
       stars.push(
-        <StarHalfOutlined key={i} className='text-xl !text-yellow-600 mr-2 cursor-pointer'/>
-      )
-    }else{
+        <StarHalfOutlined key={i} style={{ fontSize: '16px' }} className="text-lg w-4 text-yellow-600 mr-2 cursor-pointer" />
+      );
+    } else {
       stars.push(
-        <StarHalfOutlined key={i} className='text-xl !text-yellow-600 mr-2 cursor-pointer'/>
-      )
+        <StarBorder key={i} style={{ fontSize: '16px' }} className="text-lg w-4 text-yellow-600 mr-2 cursor-pointer" />
+      );
     }
   }
 
   return (
-    <div className='flex mt-1 ml-2 800px:mt-0 800px:ml-0'>{stars}</div>
-  )
-}
+    <span className="flex items-center mt-1 ml-1 800px:mt-0 800px:ml-0">
+      {rating}{" "} {stars}
+    </span>
+  );
+};
 
-export default Ratings
+export default Ratings;

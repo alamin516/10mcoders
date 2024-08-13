@@ -2,6 +2,8 @@ import { styles } from "@/styles/style";
 import Ratings from "@/utils/Ratings";
 import { CheckBoxOutlined } from "@mui/icons-material";
 import CoursePlayer from "./CoursePlayer";
+import { useEffect, useState } from "react";
+import Loader from "@/utils/Loader";
 
 type Props = {
   active: number;
@@ -18,7 +20,7 @@ const CoursePreview: React.FC<Props> = ({
   courseData,
   handleSubmitCourse,
   isEdit,
-  isLoading,
+  isLoading
 }) => {
   const prevButton = () => {
     setActive(active - 1);
@@ -36,16 +38,15 @@ const CoursePreview: React.FC<Props> = ({
     handleSubmitCourse();
   };
 
-  console.log(courseData)
 
   return (
     <div className="w-[80%] m-auto mt-5 dark:text-white">
       <div className="w-full relative">
         <div className="w-full mt-10">
-          <CoursePlayer
+          {isLoading ? <Loader/> :<CoursePlayer
             videoUrl={courseData?.demoUrl}
             title={courseData?.title}
-          />
+          />}
         </div>
 
         <div className="flex items-center dark:text-white">
@@ -102,8 +103,8 @@ const CoursePreview: React.FC<Props> = ({
           </h1>
           <div className="flex items-center justify-between pt-4">
             <div className="flex items-center">
-              <Ratings rating={0} />
-              <h5 className="ml-4">0 Reviews</h5>
+              <Ratings rating={courseData?.ratings} />
+              <h5 className="ml-4">{courseData?.reviews} Reviews</h5>
             </div>
             <h5>0 students</h5>
           </div>

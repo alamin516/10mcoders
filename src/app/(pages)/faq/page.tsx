@@ -1,3 +1,4 @@
+import FAQ from "@/components/FAQ/FAQ";
 import SimpleLayout from "@/components/master/SimpleLayout";
 import Heading from "@/utils/Heading";
 import React from "react";
@@ -14,9 +15,9 @@ const page = (props: Props) => {
       />
 
       <SimpleLayout>
-        <div className="min-h-[calc(100vh-80px)] w-full flex justify-center items-center">
-          <h2 className="text-2xl dark:text-white">FAQ</h2>
-        </div>
+        <>
+        <FAQ/>
+        </>
       </SimpleLayout>
     </>
   );

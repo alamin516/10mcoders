@@ -1,13 +1,15 @@
-import Courses from "@/components/client/Pages/Courses/Courses";
+import SingleCourse from "@/components/client/Pages/Courses/SingleCourse";
 import SimpleLayout from "@/components/master/SimpleLayout";
 import React from "react";
 
 type Props = {};
 
-const page = (props: Props) => {
+const page = ({params}: any) => {
+  const courseId  = params?.id;
+
   return (
     <SimpleLayout>
-      <Courses/>
+        <SingleCourse courseId ={courseId}/>
     </SimpleLayout>
   );
 };

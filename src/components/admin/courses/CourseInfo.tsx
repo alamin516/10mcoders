@@ -101,7 +101,7 @@ const CourseInfo: React.FC<Props> = ({
             }
             id="description"
             placeholder="Write something new......."
-            className={`${styles.input} !h-min py-2`}
+            className={`${styles.input} !h-auto py-2`}
           />
         </div>
         <div className="mt-4 flex gap-3">

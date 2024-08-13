@@ -184,7 +184,7 @@ const EditCourse:React.FC<Props> = ({id}) => {
         )}
       </div>
       <div className="w-[20%] fixed top-18 right-0">
-        <CourseOptions active={active} setActive={setActive} />
+        <CourseOptions active={active} setActive={setActive} isEdit={true} handleSubmit={handleSubmit}/>
       </div>
     </div>
   );

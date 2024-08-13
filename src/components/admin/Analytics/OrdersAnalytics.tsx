@@ -3,9 +3,11 @@ import React from "react";
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer, Tooltip, CartesianGrid } from 'recharts';
 import { useGetOrdersAnalyticsQuery } from "../../../lib/features/analytics/analyticsApi";
 
-type Props = {};
+type Props = {
+  isDashboard?: boolean
+};
 
-const OrdersAnalytics: React.FC<Props> = () => {
+const OrdersAnalytics: React.FC<Props> = ({isDashboard}) => {
   const { data, isLoading } = useGetOrdersAnalyticsQuery({});
 
   const analyticsData = data?.payload.order.last12Months.map((item: any) => ({
@@ -24,7 +26,7 @@ const OrdersAnalytics: React.FC<Props> = () => {
   }
 
   return (
-    <div className="w-full 1100px:w-[80%] mx-auto h-[300px] p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+    <div className={`w-full ${isDashboard ? "w-full":"1100px:w-[80%]"} mx-auto h-[310px] p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md`}>
       <h2 className="text-lg font-semibold dark:text-white mb-4">User Analytics (Last 12 Months)</h2>
       <ResponsiveContainer width="100%" height="100%">
         <BarChart data={analyticsData} margin={{ top: 20, right: 20, left: 0, bottom: 20 }}>
