@@ -12,7 +12,7 @@ type Props = {}
 const Testimonials = (props: Props) => {
   return (
     <div className="w-full 1000px:w-[60%] mx-auto p-6 py-20">
-        <div className="text-3xl font-bold mb-8 dark:text-white text-center">How learners like you are achieving their goalsStudent Reviews</div>
+        <div className="text-3xl font-bold mb-8 dark:text-white text-center">How learners like you are achieving their goals</div>
     <Swiper
       slidesPerView={1}
       loop={true}

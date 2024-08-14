@@ -17,12 +17,12 @@ const Footer = (props: Props) => {
           <ul>
             <li className="mb-2">
               <Link href="#" className="hover:underline">
-                Udemy Business
+              Dot Learning Business
               </Link>
             </li>
             <li className="mb-2">
               <Link href="#" className="hover:underline">
-                Teach on Udemy
+                Teach on Dot Learning
               </Link>
             </li>
             <li className="mb-2">
@@ -130,7 +130,7 @@ const Footer = (props: Props) => {
                 </Link>
               )}
             </div>
-        <p className="text-sm">&copy; {new Date().getFullYear()} YourCompany, Inc.</p>
+        <p className="text-sm">&copy; {new Date().getFullYear()} Dot Learning, Inc.</p>
       </div>
     </footer>
   );
