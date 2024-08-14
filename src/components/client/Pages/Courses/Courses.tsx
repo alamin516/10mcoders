@@ -1,7 +1,6 @@
 "use client";
 import { useGetCoursesQuery } from '@/lib/features/courses/coursesApi';
 import React from 'react';
-import Loader from '@/utils/Loader';
 import CourseCard from '@/components/Cards/CourseCard';
 import CourseCardSkeleton from './CourseCardSkeleton';
 
@@ -11,7 +10,7 @@ const Courses: React.FC<Props> = () => {
   const { data, isLoading } = useGetCoursesQuery({});
 
   return (
-    <div className="container mx-auto p-6">
+    <div className="container mx-auto 800px:p-6 px-5">
       <h1 className="text-3xl font-bold text-gray-800 dark:text-white mb-8">Explore Courses</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       {isLoading

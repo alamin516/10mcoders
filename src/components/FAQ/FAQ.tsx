@@ -67,9 +67,9 @@ const FAQ: React.FC<Props> = () => {
                 </span>
               </h3>
               {activeQuestion === question._id && (
-                <div className="faq-answer mt-2 text-gray-600 dark:text-gray-300 pl-2 border-t-[1px] pt-4">
-                  {question.answer}
-                </div>
+                <div className="faq-answer mt-2 text-gray-600 dark:text-gray-300 pl-2 border-t-[1px] pt-4" dangerouslySetInnerHTML={{ __html: `
+                  ${question.answer}
+                ` }} />
               )}
             </div>
           ))}

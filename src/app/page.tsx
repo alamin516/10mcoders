@@ -6,6 +6,7 @@ import Hero from "@/components/client/Pages/Root/Hero";
 import SimpleLayout from "@/components/master/SimpleLayout";
 import Courses from "@/components/client/Pages/Courses/Courses";
 import FAQ from "@/components/FAQ/FAQ";
+import Testimonials from "@/components/Testimonials/Testimonials";
 
 interface Props {}
 
@@ -21,6 +22,7 @@ const Page: FC<Props> = (props) => {
       <Hero/>
       <Courses/>
       <FAQ/>
+      <Testimonials/>
     </SimpleLayout>
   );
 };

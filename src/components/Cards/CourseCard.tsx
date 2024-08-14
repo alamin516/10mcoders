@@ -1,3 +1,4 @@
+import { Groups } from '@mui/icons-material';
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -34,7 +35,7 @@ const CourseCard: React.FC<Props> = ({ course, isProfile }) => {
             )}
           </div>
           <div className="flex items-center justify-between mt-4">
-            <p className="text-sm text-gray-500 dark:text-gray-400">Purchased: {course.sold}</p>
+            <p className="text-sm text-gray-500 dark:text-gray-400"><Groups/>: {course.sold}</p>
             <p className="text-sm text-yellow-500 dark:text-yellow-400 flex items-center">
               <span className="mr-1">{course.ratings}</span>
               <svg className="w-4 h-4 fill-current" viewBox="0 0 20 20">
