@@ -100,7 +100,7 @@ const Footer = (props: Props) => {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col items-end">
+        <div className="flex flex-col 800px:items-end">
           <div className="mb-4">
             <button className="flex items-center px-4 py-2 border border-white text-white hover:bg-gray-800">
               <Language className="mr-2"/>
@@ -109,7 +109,7 @@ const Footer = (props: Props) => {
           </div>
         </div>
       </div>
-      <div className="container mx-auto 800px:flex justify-between pt-20">
+      <div className="container mx-auto 800px:flex justify-between pt-20 px-5">
       <div>
               {logo ? (
                 <Link href={"/"}>
