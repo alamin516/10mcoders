@@ -12,7 +12,7 @@ const Footer = (props: Props) => {
 
   return (
     <footer className="bg-gray-900 text-white py-10">
-      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-5">
         <div>
           <ul>
             <li className="mb-2">

@@ -49,6 +49,13 @@ const AllCourses = (props: Props) => {
       field: "title",
       headerName: "Course Title",
       flex: 1,
+      renderCell: (params: any) => {
+        return (
+          <Link href={`/course/${params.row.id}`} target="_blank">
+            {params.row.title}
+          </Link>
+        );
+      },
     },
     { field: "price", headerName: "Course Price", flex: 0.3 },
     { field: "ratings", headerName: "Ratings", flex: 0.3 },
