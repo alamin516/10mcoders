@@ -26,10 +26,11 @@ export const menuItems = [
     label: "Dashboard",
   },
   {
-    href: "/admin/courses",
+    href: "#",
     icon: <LibraryBooksSharp />,
     label: "Courses",
     subItems: [
+      { href: "/admin/courses", label: "All Courses"},
       { href: "/admin/course/create", label: "Create Course"},
       { href: "/admin/course/coupons", label: "Coupons"},
       { href: "/admin/course/categories", label: "Categories"},
@@ -37,10 +38,11 @@ export const menuItems = [
     ],
   },
   {
-    href: "/admin/products",
+    href: "#",
     icon: <Store />,
     label: "Products",
     subItems: [
+      { href: "/admin/products", label: "All Products",},
       { href: "/admin/product/create", label: "Create Product",},
       { href: "/admin/product/categories", label: "Categories",},
       { href: "/admin/product/tags", label: "Tags"},
@@ -52,10 +54,11 @@ export const menuItems = [
     label: "Orders",
   },
   {
-    href: "/admin/posts",
+    href: "#",
     icon: <PostAdd />,
     label: "Posts",
     subItems: [
+      { href: "/admin/posts", label: "All Posts",},
       { href: "/admin/post/create", label: "Create Post",},
       { href: "/admin/post/categories", label: "Categories",},
       { href: "/admin/post/tags", label: "Tags"},
@@ -92,10 +95,11 @@ export const menuItems = [
     label: "Profile",
   },
   {
-    href: "/admin/users",
+    href: "#",
     icon: <Group />,
     label: "Users",
     subItems: [
+      { href: "/admin/users", label: "All Users",},
       { href: "/admin/users/team", label: "Team",},
     ],
   },
