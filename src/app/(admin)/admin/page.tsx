@@ -1,4 +1,5 @@
 import DashboardAnalytics from "@/components/admin/Analytics/DashboardAnalytics";
+import Stats from "@/components/admin/Stats";
 import Heading from "@/utils/Heading";
 import React from "react";
 
@@ -8,7 +9,7 @@ const page = (props: Props) => {
   return (
     <div>
       <Heading title="Admin - Dot Learning" description="" keywords="" />
-      <DashboardAnalytics/>
+      <Stats/>
     </div>
   );
 };

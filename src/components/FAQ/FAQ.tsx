@@ -38,7 +38,7 @@ const FAQ: React.FC<Props> = () => {
         : questions.map((question: any, index: number) => (
             <div
               key={index}
-              className="faq-item mb-4 border border-gray-200 dark:border-gray-700 rounded-lg p-4 bg-white dark:bg-gray-800 shadow-sm"
+              className="faq-item mb-4 border border-gray-200 dark:border-gray-700 p-4 shadow-sm"
             >
               <h3
                 onClick={() => toggleQuestion(question._id)}
@@ -67,9 +67,9 @@ const FAQ: React.FC<Props> = () => {
                 </span>
               </h3>
               {activeQuestion === question._id && (
-                <div className="faq-answer mt-2 text-gray-600 dark:text-gray-300 pl-2 border-t-[1px] pt-4" dangerouslySetInnerHTML={{ __html: `
-                  ${question.answer}
-                ` }} />
+                <div className="faq-answer mt-2 text-gray-600 dark:text-gray-300 pl-2 border-t-[1px] pt-4 whitespace-pre-line">
+                  {question.answer}
+                </div>
               )}
             </div>
           ))}

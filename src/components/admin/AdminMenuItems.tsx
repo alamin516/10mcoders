@@ -14,19 +14,20 @@ import {
 } from "@mui/icons-material";
 
 export const menuItems = [
-  {
-    href: "/",
-    icon: <OpenInNewOutlined />,
-    label: "Visit Site",
-    target: "_blank",
-  },
+  // {
+  //   href: "/",
+  //   icon: <OpenInNewOutlined />,
+  //   label: "Visit Site",
+  //   target: "_blank",
+  // },
   {
     href: "/admin",
     icon: <GridViewOutlined />,
     label: "Dashboard",
+    target: "_self",
   },
   {
-    href: "#",
+    href: "/admin/courses",
     icon: <LibraryBooksSharp />,
     label: "Courses",
     subItems: [
@@ -38,7 +39,7 @@ export const menuItems = [
     ],
   },
   {
-    href: "#",
+    href: "/admin/products",
     icon: <Store />,
     label: "Products",
     subItems: [
@@ -50,12 +51,12 @@ export const menuItems = [
   },
   {
     href: "/admin/orders",
-    icon: <ShoppingBag />,
+    icon: <ShoppingBag style={{color: "#ddd"}}/>,
     label: "Orders",
   },
   {
-    href: "#",
-    icon: <PostAdd />,
+    href: "/admin/posts",
+    icon: <PostAdd style={{color: "#ddd"}}/>,
     label: "Posts",
     subItems: [
       { href: "/admin/posts", label: "All Posts",},
@@ -66,7 +67,7 @@ export const menuItems = [
   },
   {
     href: "#",
-    icon: <ColorLens />,
+    icon: <ColorLens style={{color: "#ddd"}}/>,
     label: "Customization",
     subItems: [
       { href: "/admin/customization/hero", label: "Hero Section",},
@@ -76,7 +77,7 @@ export const menuItems = [
   },
   {
     href: "#",
-    icon: <InsertChart />,
+    icon: <InsertChart style={{color: "#ddd"}}/>,
     label: "Analytics",
     subItems: [
       { href: "/admin/analytics/courses", label: "Course"},
@@ -86,17 +87,17 @@ export const menuItems = [
   },
   {
     href: "/admin/messages",
-    icon: <MessageOutlined />,
+    icon: <MessageOutlined style={{color: "#ddd"}}/>,
     label: "Messages",
   },
   {
     href: "/admin/profile",
-    icon: <AdminPanelSettings />,
+    icon: <AdminPanelSettings style={{color: "#ddd"}}/>,
     label: "Profile",
   },
   {
-    href: "#",
-    icon: <Group />,
+    href: "/admin/users",
+    icon: <Group style={{color: "#ddd"}}/>,
     label: "Users",
     subItems: [
       { href: "/admin/users", label: "All Users",},
@@ -105,7 +106,7 @@ export const menuItems = [
   },
   {
     href: "/admin/settings",
-    icon: <Settings />,
+    icon: <Settings style={{color: "#ddd"}}/>,
     label: "Settings",
   },
 ];

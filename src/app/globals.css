@@ -186,7 +186,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /* Track */
 .notification::-webkit-scrollbar-track {
-  background: rgb(240, 240, 240);
+  background: #1b1b28;
 }
 
 .dark .notification::-webkit-scrollbar-track {
@@ -194,7 +194,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 /* Handle */
 .notification::-webkit-scrollbar-thumb {
-  background: rgb(54, 221, 54);
+  background: #1b1b28;
   opacity: 0.5;
 }
 
@@ -214,7 +214,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 .admin-sidebar .side_nav::-webkit-scrollbar-thumb {
-  background: rgb(54, 221, 54);
+  background: #1b1b28;
   opacity: 0.5;
 }
 
@@ -235,7 +235,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 .admin-main::-webkit-scrollbar-thumb {
-  background: rgb(54, 221, 54);
+  background: #1b1b28;
   opacity: 0.5;
 }
 

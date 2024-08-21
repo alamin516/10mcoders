@@ -45,7 +45,7 @@ const CoursePlayer: React.FC<Props> = ({ videoUrl, title }) => {
   }, [videoData]);
 
   return (
-    <div className="pt-[56%] relative">
+    <div className="pt-[56%] relative overflow-hidden">
       {loading && (
         <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center bg-gray-200 dark:bg-gray-700">
           <div className="animate-pulse bg-gray-300 dark:bg-gray-600 h-12 w-12 rounded-full"></div>

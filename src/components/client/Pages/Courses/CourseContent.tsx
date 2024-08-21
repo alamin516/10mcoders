@@ -7,6 +7,7 @@ type Props = {
     courseData: Video[];
   } | null;
   isLoading: boolean;
+  
 };
 
 type Video = {

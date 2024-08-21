@@ -6,6 +6,7 @@ import Loader from "@/utils/Loader";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import CourseContentMedia from "./CourseContentMedia";
+import CourseContentList from "./CourseContentList";
 
 type Props = {
   id: string;
@@ -45,15 +46,23 @@ const CourseContents = ({ id }: Props) => {
             description={activeCourseVideo?.description || ""}
             keywords={activeCourseVideo?.tags || ""}
           />
-          
+
           <div className="w-full grid 800px:grid-cols-10">
-            <div className="col-span-7">
+            <div className="800px:col-span-7">
               <CourseContentMedia
                 course={course}
                 id={id}
                 activeVideo={activeVideo}
                 setActiveVideo={setActiveVideo}
               />
+            </div>
+            <div className="hidden 800px:block 800px:col-span-3">
+                <CourseContentList
+                  course={course}
+                  activeVideo={activeVideo}
+                  setActiveVideo={setActiveVideo}
+                  isLoading={isLoading}
+                />
             </div>
           </div>
         </>
