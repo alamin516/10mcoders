@@ -2,6 +2,7 @@ import { styles } from "@/styles/style";
 import {
   AddCircleOutlineOutlined,
   AddLinkOutlined,
+  ContentCopyOutlined,
   DeleteOutlineOutlined,
   EditOutlined,
   KeyboardArrowDownOutlined,
@@ -105,6 +106,22 @@ const CourseContent: React.FC<Props> = ({
     }
   };
 
+  const duplicateContent = (index: number) => {
+    const updateData = [...courseContentData];
+    const contentToDuplicate = updateData[index];
+    updateData.splice(index + 1, 0, { ...contentToDuplicate });
+    setCourseContentData(updateData);
+  };
+
+  const duplicateSection = (section: string) => {
+    const newContent = courseContentData
+      .filter((item: any) => item.videoSection === section)
+      .map((item: any) => ({ ...item }));
+
+    const updateData = [...courseContentData, ...newContent];
+    setCourseContentData(updateData);
+  };
+
   const prevButton = () => {
     setActive(active - 1);
   };
@@ -134,7 +151,8 @@ const CourseContent: React.FC<Props> = ({
             item.videoSection !== courseContentData[index - 1].videoSection;
           return (
             <>
-              <div key={index}
+              <div
+                key={index}
                 className={`w-full dark:bg-gray-800 shadow-md dark:shadow-none p-4 ${
                   showSectionInput ? "mt-10" : "mb-0"
                 } ${!isCollapsed ? "flex justify-between" : "flex-none"}`}
@@ -148,10 +166,11 @@ const CourseContent: React.FC<Props> = ({
                           type="text"
                           value={item.videoSection}
                           onChange={(e) => {
-                            const updateData = courseContentData.map((content: any, i: number) => 
-                              i === index 
-                                ? { ...content, videoSection: e.target.value }
-                                : content
+                            const updateData = courseContentData.map(
+                              (content: any, i: number) =>
+                                i === index
+                                  ? { ...content, videoSection: e.target.value }
+                                  : content
                             );
                             setCourseContentData(updateData);
                           }}
@@ -162,6 +181,10 @@ const CourseContent: React.FC<Props> = ({
                           } font-Poppins dark:text-white bg-transparent outline-none`}
                         />
                         <EditOutlined className="cursor-pointer dark:text-white" />
+                        <ContentCopyOutlined
+                          className="cursor-pointer dark:text-white ml-3"
+                          onClick={() => duplicateSection(item.videoSection)}
+                        />
                       </div>
                     </div>
                   </>
@@ -221,10 +244,11 @@ const CourseContent: React.FC<Props> = ({
                           type="text"
                           value={item.title}
                           onChange={(e) => {
-                            const updateData = courseContentData.map((content: any, i: number) => 
-                              i === index 
-                                ? { ...content, title: e.target.value }
-                                : content
+                            const updateData = courseContentData.map(
+                              (content: any, i: number) =>
+                                i === index
+                                  ? { ...content, title: e.target.value }
+                                  : content
                             );
                             setCourseContentData(updateData);
                           }}
@@ -239,10 +263,11 @@ const CourseContent: React.FC<Props> = ({
                           type="text"
                           value={item.videoUrl}
                           onChange={(e) => {
-                            const updateData = courseContentData.map((content: any, i: number) => 
-                              i === index 
-                                ? { ...content, videoUrl: e.target.value }
-                                : content
+                            const updateData = courseContentData.map(
+                              (content: any, i: number) =>
+                                i === index
+                                  ? { ...content, videoUrl: e.target.value }
+                                  : content
                             );
                             setCourseContentData(updateData);
                           }}
@@ -253,15 +278,18 @@ const CourseContent: React.FC<Props> = ({
 
                       {/* Video Length */}
                       <div className="mb-3">
-                        <label className={`${styles.label}`}>Video Length</label>
+                        <label className={`${styles.label}`}>
+                          Video Length
+                        </label>
                         <input
                           type="number"
                           value={item.videoLength}
                           onChange={(e) => {
-                            const updateData = courseContentData.map((content: any, i: number) => 
-                              i === index 
-                                ? { ...content, videoLength: e.target.value }
-                                : content
+                            const updateData = courseContentData.map(
+                              (content: any, i: number) =>
+                                i === index
+                                  ? { ...content, videoLength: e.target.value }
+                                  : content
                             );
                             setCourseContentData(updateData);
                           }}
@@ -280,10 +308,11 @@ const CourseContent: React.FC<Props> = ({
                           cols={30}
                           value={item.description}
                           onChange={(e) => {
-                            const updateData = courseContentData.map((content: any, i: number) => 
-                              i === index 
-                                ? { ...content, description: e.target.value }
-                                : content
+                            const updateData = courseContentData.map(
+                              (content: any, i: number) =>
+                                i === index
+                                  ? { ...content, description: e.target.value }
+                                  : content
                             );
                             setCourseContentData(updateData);
                           }}
@@ -318,17 +347,19 @@ const CourseContent: React.FC<Props> = ({
                             className={`${styles.input}`}
                             value={link?.title}
                             onChange={(e) => {
-                              const updateData = courseContentData.map((content: any, i: number) => 
-                                i === index 
-                                  ? { 
-                                      ...content, 
-                                      links: content.links.map((l: any, li: number) => 
-                                        li === linkIndex 
-                                          ? { ...l, title: e.target.value }
-                                          : l
-                                      )
-                                    }
-                                  : content
+                              const updateData = courseContentData.map(
+                                (content: any, i: number) =>
+                                  i === index
+                                    ? {
+                                        ...content,
+                                        links: content.links.map(
+                                          (l: any, li: number) =>
+                                            li === linkIndex
+                                              ? { ...l, title: e.target.value }
+                                              : l
+                                        ),
+                                      }
+                                    : content
                               );
                               setCourseContentData(updateData);
                             }}
@@ -339,17 +370,19 @@ const CourseContent: React.FC<Props> = ({
                             className={`${styles.input}`}
                             value={link?.url}
                             onChange={(e) => {
-                              const updateData = courseContentData.map((content: any, i: number) => 
-                                i === index 
-                                  ? { 
-                                      ...content, 
-                                      links: content.links.map((l: any, li: number) => 
-                                        li === linkIndex 
-                                          ? { ...l, url: e.target.value }
-                                          : l
-                                      )
-                                    }
-                                  : content
+                              const updateData = courseContentData.map(
+                                (content: any, i: number) =>
+                                  i === index
+                                    ? {
+                                        ...content,
+                                        links: content.links.map(
+                                          (l: any, li: number) =>
+                                            li === linkIndex
+                                              ? { ...l, url: e.target.value }
+                                              : l
+                                        ),
+                                      }
+                                    : content
                               );
                               setCourseContentData(updateData);
                             }}
@@ -369,18 +402,29 @@ const CourseContent: React.FC<Props> = ({
                       {/*End Add New Link and Title */}
                     </>
                   )}
-                  {/* Add new content */}
-                  {index === courseContentData.length - 1 && (
-                    <div className="mt-4">
+                  <div className="flex items-center justify-between mt-3">
+                    {/* Add new content */}
+                    {index === courseContentData.length - 1 && (
+                      <div className="!w-[unset]">
+                        <p
+                          className="flex items-center text-lg dark:text-white text-black cursor-pointer"
+                          onClick={(e) => handleNewContent(item)}
+                        >
+                          <AddCircleOutlineOutlined className="mr-2" /> Add New
+                          Content
+                        </p>
+                      </div>
+                    )}
+                    <div className="flex items-center">
                       <p
-                        className="flex items-center text-lg dark:text-white text-black cursor-pointer"
-                        onClick={(e) => handleNewContent(item)}
+                        className="font-Poppins ml-2 dark:text-white"
+                        onClick={() => duplicateContent(index)}
                       >
-                        <AddCircleOutlineOutlined className="mr-2" /> Add New
-                        Content
+                        <ContentCopyOutlined className="cursor-pointer dark:text-white mr-2" />
+                        Duplicate
                       </p>
                     </div>
-                  )}
+                  </div>
                 </div>
               </div>
             </>
